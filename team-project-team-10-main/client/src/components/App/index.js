@@ -32,19 +32,19 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SignUp from '../UserSignUp';
-import SignIn from '../UserSignIn';
-import HPSignUp from '../HPSignUp';
-import HPSignIn from '../HPSignIn';
+import SignUp from '../PatientSignUp';
+import SignIn from '../PatientSignIn';
+import HPSignUp from '../HealthPractitionerSignUp';
+import HPSignIn from '../HealthPractitionerSignIn';
 import LandingPage from '../Landing/LandingPage';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/h-login" element={<HPSignIn />} />
-        <Route path="/h-signup" element={<HPSignUp />} />
-        <Route path="/p-login" element={<SignIn />} />
+        <Route path="/hp-signin" element={<HPSignIn />} />
+        <Route path="/hp-signup" element={<HPSignUp />} />
+        <Route path="/p-signin" element={<SignIn />} />
         <Route path="/p-signup" element={<SignUp />} />
         <Route path="/" element={<LandingPage />} />
       </Routes>
