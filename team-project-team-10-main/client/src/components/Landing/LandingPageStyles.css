@@ -1,0 +1,115 @@
+/* Import the same color variables */
+:root {
+  --color-sage: #819672;
+  --color-mint: #E3EDDD;
+  --color-white: #ffffff;
+  --color-gray: #595959;
+}
+
+/* Reuse the background styles */
+.background {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background::before,
+.background::after {
+  content: '';
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background-color: rgba(227, 237, 221, 0.5);
+  filter: blur(60px);
+}
+
+.background::before {
+  top: -160px;
+  right: -160px;
+}
+
+.background::after {
+  bottom: -160px;
+  left: -160px;
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-sage);
+  text-decoration: none;
+}
+
+/* Main content styles */
+.main-content {
+  padding: 2rem 0;
+}
+
+/* Role card styles */
+.role-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-mint);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.role-card.selected {
+  border-color: var(--color-sage);
+}
+
+/* Next button styles */
+.next-button {
+  padding: 0.75rem 2rem;
+  background-color: var(--color-sage);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.next-button:hover {
+  background-color: rgba(129, 150, 114, 0.9);
+}
+
+.next-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .role-card {
+    padding: 1.5rem;
+  }
+}

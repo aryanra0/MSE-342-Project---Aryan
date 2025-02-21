@@ -5,7 +5,7 @@ function SignUpForm() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    healthCard: '',
+    MINC: '',
     dateOfBirth: '',
     firstName: '',
     lastName: '',
@@ -43,16 +43,16 @@ function SignUpForm() {
       <form onSubmit={handleSubmit}>
         <div className="form-row">
           <div className="form-group">
-            <label htmlFor="healthCard" className="form-label">
-              Health Card Number
+            <label htmlFor="MINC" className="form-label">
+            Medical Identification Number for Canada (MINC)
             </label>
             <input
               type="text"
-              id="healthCard"
-              name="healthCard"
+              id="MINC"
+              name="MINC"
               className="form-input"
-              placeholder="Enter your health card number..."
-              value={formData.healthCard}
+              placeholder="Enter your MINC..."
+              value={formData.MINC}
               onChange={handleChange}
               required
             />
@@ -149,7 +149,7 @@ function SignUpForm() {
 
       <div className="login-link">
         <p>Already have an account?</p>
-        <a href="/signin" className="text-link">Sign in to your account</a>
+        <a href="/h-login" className="text-link">Sign in to your account</a>
       </div>
     </div>
   );
